@@ -1,0 +1,43 @@
+﻿@model CustomAuthorizationFilter.Models.EducationDetails
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>EducationDetails</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.EducationName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EducationName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ManthAndYearOfPassing)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ManthAndYearOfPassing)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Percentage)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Percentage)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
