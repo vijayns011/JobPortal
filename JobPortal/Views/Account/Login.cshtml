@@ -8,37 +8,81 @@
 {
     @Html.AntiForgeryToken()
 
-<div class="form-horizontal">
+    @*<div class="form-horizontal">
 
-    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-    <div class="form-group">
-        @Html.LabelFor(model => model.UserId, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.TextBoxFor(model => model.UserId, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.UserId, "", new { @class = "text-danger" })
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="form-group">
+                @Html.LabelFor(model => model.UserId, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.TextBoxFor(model => model.UserId, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.UserId, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.PasswordFor(model => model.Password, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Proceed" class="btn btn-default" />
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <a href="/Account/Create/">Create User</a>
+                </div>
+            </div>
+        </div>*@
+
+
+
+
+    <!-- Page Content -->
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-6 offset-xl-3">
+                <div class="utf-login-register-page-aera margin-top-50 margin-bottom-50">
+                    <div class="utf-welcome-text-item">
+                        <h3>Welcome Back Sign in to Continue</h3>
+                        <!-- <span>Don't Have an Account? <a href="register.html">Sign Up!</a></span>  -->
+                    </div>
+                    <form method="post" id="login-form">
+                        <div class="utf-no-border">
+                            @*<input type="text" class="utf-with-border" name="emailaddress" id="emailaddress" placeholder="Email Address" required />*@
+                            @Html.TextBoxFor(model => model.UserName, new { @class = "utf-with-border", @id = "emailaddress", @placeholder = "Email Address" })
+                            @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="utf-no-border">
+                            @Html.PasswordFor(model => model.Password, new { @class = "utf-with-border", @name = "password", @id = "password", @placeholder = "Password" })
+                            @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                            @*<input type="password" class="utf-with-border" name="password" id="password" placeholder="Password" required />*@
+                        </div>
+                        <div class="checkbox margin-top-10">
+                            <input type="checkbox" id="two-step">
+                            <label for="two-step"><span class="checkbox-icon"></span> Remember Me</label>
+                        </div>
+                        <a href="forgot-password.html" class="forgot-password">Forgot Password?</a>
+                    </form>
+                    @*<a class="button full-width utf-button-sliding-icon ripple-effect margin-top-10" href="jobs-search-list.html">Log In <i class="icon-feather-chevron-right"></i></a>*@
+                    <input type="submit" class="button full-width utf-button-sliding-icon ripple-effect margin-top-10" value="Proceed" class="btn btn-default" />
+                    <div class="utf-social-login-separator-item"><span>Or Login in With</span></div>
+                    <div class="utf-social-login-buttons-block">
+                        <button class="facebook-login ripple-effect"><i class="icon-brand-facebook-f"></i> Facebook</button>
+                        <button class="google-login ripple-effect"><i class="icon-brand-google"></i> Google+</button>
+                        <button class="twitter-login ripple-effect"><i class="icon-brand-twitter"></i> Twitter</button>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-    <div class="form-group">
-        @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.PasswordFor(model => model.Password, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
-        </div>
-    </div>
-    <div class="form-group">
-        <div class="col-md-offset-2 col-md-10">
-            <input type="submit" value="Proceed" class="btn btn-default" />
-        </div>
-    </div>
-    <div class="form-group">
-        <div class="col-md-offset-2 col-md-10">
-            <a href="/Account/Create/">Create User</a>
-        </div>
-    </div>
-</div>
+
+
 }
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Back to List", "Index","Home")
 </div>
 <script src="~/Scripts/jquery-1.10.2.min.js"></script>
 <script src="~/Scripts/jquery.validate.min.js"></script>

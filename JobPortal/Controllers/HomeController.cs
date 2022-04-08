@@ -3,15 +3,15 @@ using System.Web.Mvc;
 
 namespace CustomAuthorizationFilter.Controllers
 {
-    [CustomAuthenticationFilter]
+    //[CustomAuthenticationFilter]
     public class HomeController : Controller
     {
-        [CustomAuthorize("Normal", "SuperAdmin")]
+        //[CustomAuthorize("Normal", "SuperAdmin")]
         public ActionResult Index()
         {
             return View();
         }
-
+       
         [CustomAuthorize("Admin", "SuperAdmin")]
         public ActionResult About()
         {

@@ -22,14 +22,14 @@ namespace CustomAuthorizationFilter.Controllers
                 using (var context = new SqlDbContext())
                 {
                     User user = context.Users
-                                       .Where(u => u.UserId == model.UserId && u.Password == model.Password)
+                                       .Where(u => u.UserId == model.UserName && u.Password == model.Password)
                                        .FirstOrDefault();
 
                     if (user != null)
                     {
                         Session["UserName"] = user.UserName;
                         Session["UserId"] = user.UserId;
-                        return RedirectToAction("Index", "Home");
+                        return RedirectToAction("Index", "EmployeeProfile");
                     }
                     else
                     {
@@ -68,6 +68,8 @@ namespace CustomAuthorizationFilter.Controllers
         {
             if (ModelState.IsValid)
             {
+                user.UserId = user.UserName;
+                user.RoleId = 1;
                 db.Users.Add(user);
                 db.SaveChanges();
                 return RedirectToAction("Login");

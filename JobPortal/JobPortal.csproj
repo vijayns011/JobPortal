@@ -126,6 +126,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\EducationDetailsController.cs" />
+    <Compile Include="Controllers\EmployeeProfileController.cs" />
     <Compile Include="Controllers\EmployersController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\JobDetailsController.cs" />
@@ -136,6 +137,11 @@
     </Compile>
     <Compile Include="Infrastructure\CustomAuthenticationFilter.cs" />
     <Compile Include="Infrastructure\CustomAuthorizeAttribute.cs" />
+    <Compile Include="Migrations\202203101259491_InitialCreate.cs" />
+    <Compile Include="Migrations\202203101259491_InitialCreate.Designer.cs">
+      <DependentUpon>202203101259491_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\JobSeeker.cs" />
     <Compile Include="Models\JobDetails.cs" />
     <Compile Include="Models\EducationDetails.cs" />
@@ -146,16 +152,35 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\icons.css" />
+    <Content Include="Content\Images\footer_logo.png" />
+    <Content Include="Content\Images\logo.png" />
+    <Content Include="Content\invoice.css" />
+    <Content Include="Content\landing.css" />
+    <Content Include="Content\style.css" />
     <Content Include="favicon.ico" />
+    <Content Include="fonts\Brand-Icons.svg" />
+    <Content Include="fonts\Feather-Icons.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="fonts\Line-Awesome.svg" />
+    <Content Include="fonts\Material-Icons.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="fonts\Brand-Icons.ttf" />
+    <Content Include="fonts\Brand-Icons.woff" />
+    <Content Include="fonts\Feather-Icons.ttf" />
+    <Content Include="fonts\Feather-Icons.woff" />
+    <Content Include="fonts\Line-Awesome.ttf" />
+    <Content Include="fonts\Line-Awesome.woff" />
+    <Content Include="fonts\Material-Icons.ttf" />
+    <Content Include="fonts\Material-Icons.woff" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -167,6 +192,24 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\themejs\bootstrap-select.min.js" />
+    <Content Include="Scripts\themejs\bootstrap-slider.min.js" />
+    <Content Include="Scripts\themejs\chart.min.js" />
+    <Content Include="Scripts\themejs\clipboard.min.js" />
+    <Content Include="Scripts\themejs\counterup.min.js" />
+    <Content Include="Scripts\themejs\custom_jquery.js" />
+    <Content Include="Scripts\themejs\infobox.min.js" />
+    <Content Include="Scripts\themejs\jquery-3.3.1.min.js" />
+    <Content Include="Scripts\themejs\jquery-migrate-3.0.0.min.js" />
+    <Content Include="Scripts\themejs\magnific-popup.min.js" />
+    <Content Include="Scripts\themejs\maps.js" />
+    <Content Include="Scripts\themejs\markerclusterer.js" />
+    <Content Include="Scripts\themejs\mmenu.min.js" />
+    <Content Include="Scripts\themejs\simplebar.min.js" />
+    <Content Include="Scripts\themejs\slick.min.js" />
+    <Content Include="Scripts\themejs\snackbar.js" />
+    <Content Include="Scripts\themejs\tippy.all.min.js" />
+    <Content Include="Scripts\themejs\typed.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -205,10 +248,12 @@
     <Content Include="Views\EducationDetails\Details.cshtml" />
     <Content Include="Views\EducationDetails\Edit.cshtml" />
     <Content Include="Views\EducationDetails\Index.cshtml" />
+    <Content Include="Views\Shared\_HeaderCommon.cshtml" />
+    <Content Include="Views\Shared\_FooterCommon.cshtml" />
+    <Content Include="Views\EmployeeProfile\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Migrations\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -222,6 +267,11 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202203101259491_InitialCreate.resx">
+      <DependentUpon>202203101259491_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

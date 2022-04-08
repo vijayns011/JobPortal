@@ -13,18 +13,27 @@ namespace CustomAuthorizationFilter.Infrastructure
             {
                 filterContext.Result = new HttpUnauthorizedResult();
             }
+
+           // var xx=filterContext.Controller.ToString();
         }
         public void OnAuthenticationChallenge(AuthenticationChallengeContext filterContext)
         {
             if (filterContext.Result == null || filterContext.Result is HttpUnauthorizedResult)
             {
                 //Redirecting the user to the Login View of Account Controller
+                //filterContext.Result = new RedirectToRouteResult(
+                //new RouteValueDictionary
+                //{
+                //     { "controller", "Account" },
+                //     { "action", "Login" }
+                //});
+
                 filterContext.Result = new RedirectToRouteResult(
-                new RouteValueDictionary
-                {
-                     { "controller", "Account" },
-                     { "action", "Login" }
-                });
+                    new RouteValueDictionary
+                    {
+                     { "controller", "Home" },
+                     { "action", "Index" }
+                    });
             }
         }
     }
