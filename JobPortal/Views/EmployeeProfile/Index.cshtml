@@ -1,553 +1,353 @@
-﻿
-    <!-- Preloader Start -->
-    <div class="preloader">
-        <div class="utf-preloader">
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
+﻿@model CustomAuthorizationFilter.Models.JobSeeker
+
+<!-- Preloader Start -->
+<div class="preloader">
+    <div class="utf-preloader">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
     </div>
-    <!-- Preloader End -->
-    <!-- Wrapper -->
-    <div id="wrapper">
-        <!-- Header Container -->
-        <header id="utf-header-container-block">
-            <div id="header">
-                <div class="container">
-                    <div class="utf-left-side">
-                        <div id="logo"> <a href="index.html"><img src="images/logo.png" alt=""></a> </div>
-                        <nav id="navigation">
-                            <ul id="responsive">
+</div>
+<!-- Preloader End -->
+<!-- Wrapper -->
+<div id="wrapper">
+    <!-- Header Container -->
+    <header id="utf-header-container-block">
+        <div id="header">
+            <div class="container">
+                <div class="utf-left-side">
+                    <div id="logo"> <a href="index.html"><img src="/Content/Images/logo.png" alt=""></a> </div>
+                    <nav id="navigation">
+                        <ul id="responsive">
 
-                                <li>
-                                    <a href="#">Jobs</a><ul>
-                                        <li><a href="#"> IT jobs </a></li>
-                                        <li><a href="#"> Sales jobs </a></li>
-                                        <li><a href="#"> Marketing jobs</a></li>
-                                        <li><a href="#">  Data Science jobs</a></li>
-                                        <li><a href="#"> HR jobs</a></li>
-                                        <li><a href="#">   Engineering jobs</a></li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="#">Companies</a>
-                                    <ul class="dropdown-nav">
+                            <li>
+                                <a href="#">Jobs</a><ul>
+                                    <li><a href="#"> IT jobs </a></li>
+                                    <li><a href="#"> Sales jobs </a></li>
+                                    <li><a href="#"> Marketing jobs</a></li>
+                                    <li><a href="#">  Data Science jobs</a></li>
+                                    <li><a href="#"> HR jobs</a></li>
+                                    <li><a href="#">   Engineering jobs</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">Companies</a>
+                                <ul class="dropdown-nav">
 
-                                        <li><a href="#"> MNCs </a></li>
-                                        <li><a href="#">  Startup</a></li>
-                                        <li><a href="#">  Product based</a></li>
-                                        <li><a href="#">  Internet</a></li>
-                                        <li><a href="#"> IT/Software</a></li>
+                                    <li><a href="#"> MNCs </a></li>
+                                    <li><a href="#">  Startup</a></li>
+                                    <li><a href="#">  Product based</a></li>
+                                    <li><a href="#">  Internet</a></li>
+                                    <li><a href="#"> IT/Software</a></li>
 
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="#">Services</a>
-                                </li>
-                                <li>
-                                    <a href="#">Resources</a>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">Services</a>
+                            </li>
+                            <li>
+                                <a href="#">Resources</a>
 
-                                </li>
+                            </li>
 
-                            </ul>
-                        </nav>
-                        <div class="clearfix"></div>
+                        </ul>
+                    </nav>
+                    <div class="clearfix"></div>
+                </div>
+
+                <div class="utf-right-side">
+                    <div class="utf-header-widget-item">
+                        <div class="utf-header-notifications user-menu">
+                            <div class="utf-header-notifications-trigger user-profile-title">
+                                <a href="#">
+                                    <div class="user-avatar status-online"><img src="images/user_small_1.jpg" alt=""> </div>
+                                    <div class="user-name">Hi, @Session["UserName"].ToString()</div>
+                                </a>
+                            </div>
+                            <div class="utf-header-notifications-dropdown-block">
+                                <ul class="utf-user-menu-dropdown-nav">
+                                    <li><a href="my-profile.html"><i class="icon-feather-user"></i> Edit Profile</a></li>
+
+                                    <li><a href="#"><i class="icon-material-outline-star-border"></i> Saved Jobs</a></li>
+
+                                    <li><a href="index.html"><i class="icon-material-outline-power-settings-new"></i> Logout</a></li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
+                    <span class="mmenu-trigger">
+                        <button class="hamburger utf-hamburger-collapse-item" type="button"> <span class="utf-hamburger-box-item"> <span class="utf-hamburger-inner-item"></span> </span> </button>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="clearfix"></div>
+    <!-- Header Container / End -->
+    <!-- Page Content -->
+    <div class="container">
+        <div class="row">
 
-                    <div class="utf-right-side">
-                        <div class="utf-header-widget-item">
-                            <div class="utf-header-notifications user-menu">
-                                <div class="utf-header-notifications-trigger user-profile-title">
-                                    <a href="#">
-                                        <div class="user-avatar status-online"><img src="images/user_small_1.jpg" alt=""> </div>
-                                        <div class="user-name">Hi, John!</div>
-                                    </a>
+
+            <div class="col-xl-12 col-lg-8">
+
+                <div class="row">
+                    <div class="col-lg-8 col-md-8 col-xs-12 col-sm-12">
+                        <div class="blue-box candidate-detail">
+                            <div class="row">
+                                <div class="col-lg-3 col-md-3 col-xs-12 col-sm-3">
+                                    <img src="./images/user-avatar-placeholder.png" class="img-responsive border-white" />
                                 </div>
-                                <div class="utf-header-notifications-dropdown-block">
-                                    <ul class="utf-user-menu-dropdown-nav">
-                                        <li><a href="my-profile.html"><i class="icon-feather-user"></i> Edit Profile</a></li>
+                                <div class="col-lg-9 col-md-9 col-xs-12 col-sm-9 candidate-details">
+                                    <div class="row">
+                                        <div class="col-lg-12 col-md-12 col-xs-12 col-sm-12">
 
-                                        <li><a href="#"><i class="icon-material-outline-star-border"></i> Saved Jobs</a></li>
+                                            <p class="name">Candidate Name <a href="#Basic-dtl" class="color-white edit-icon  ripple-effect popup-with-zoom-anim"><i class="icon-feather-edit font-22"></i></a></p>
+                                        </div>
+                                        <div class="col-lg-12 col-md-12 col-xs-12 col-sm-12">
+                                            <p>UX and UI Designer and developer</p>
+                                        </div>
+                                        <div class="col-lg-12 col-md-12 col-xs-12 col-sm-12">	<p> <i class="icon-feather-map-pin"></i> Location</p></div>
+                                        <div class="col-lg-6 col-md-6 col-xs-12 col-sm-6"><p><i class="icon-feather-briefcase"></i> 9 Years Experienced</p></div>
+                                        <div class="col-lg-6 col-md-6 col-xs-12 col-sm-6"><p><i class="icon-material-outline-business-center"></i> 8.5 LPA</p></div>
+                                        <div class="col-lg-6 col-md-6 col-xs-12 col-sm-6"><p><i class="icon-feather-phone"></i>  +91 0123 123 235</p></div>
+                                        <div class="col-lg-6 col-md-6 col-xs-12 col-sm-6"><p><i class="icon-material-baseline-mail-outline"></i> email@domain.com</p></div>
 
-                                        <li><a href="index.html"><i class="icon-material-outline-power-settings-new"></i> Logout</a></li>
-                                    </ul>
+                                    </div>
+
+
+
+
+
                                 </div>
                             </div>
                         </div>
-                        <span class="mmenu-trigger">
-                            <button class="hamburger utf-hamburger-collapse-item" type="button"> <span class="utf-hamburger-box-item"> <span class="utf-hamburger-inner-item"></span> </span> </button>
-                        </span>
+
+                        <div class="modal-box margin-top-20">
+                            <p class="modal-heading">Resume Headline <a href="#resume-heading" class="edit-icon ripple-effect popup-with-zoom-anim"> <i class="icon-feather-edit"></i></a></p>
+                            <p>	9 Years Experienced</p>
+                        </div>
+
+                        <div class="modal-box margin-top-20">
+                            <p class="modal-heading">Key Skills <a href="#Key-Skill" class="ripple-effect popup-with-zoom-anim"> <i class="icon-feather-edit"></i></a></p>
+                            <p class="skill-set">	<span> Skill </span> <span> Bootstrap </span> <span> HTML </span> <span> .Net </span> <span> SQL  </span>  </p>
+                        </div>
+
+                        <div class="modal-box margin-top-20">
+                            <p class="modal-heading">Employment<a href="#candidate-dtl" class="ripple-effect popup-with-zoom-anim"> <i class="icon-feather-edit"></i></a> <a href="#candidate-dtl" class="edit-icon linkbtn  ripple-effect popup-with-zoom-anim"> <i class="icon-feather-plus"></i> Add Employment</a></p>
+
+                            <p>	<strong> UX and UI Designer and develope</strong></p>
+                            <p>Company Name</p>
+                            <p>	3 Years Experienced</p>
+                            <p>UX/UI designer and developer</p>
+                            <p class="skill-set"> <strong> Top 5 Key Skills: </strong> 	<span> Skill </span> <span> Bootstrap </span> <span> HTML </span> <span> .Net </span> <span> SQL  </span>  </p>
+                        </div>
+
+                        <div class="modal-box margin-top-20">
+                            <p class="modal-heading">
+                                Education<a href="#Eduction-dtl" class="ripple-effect popup-with-zoom-anim "> <i class="icon-feather-edit"></i></a>
+                                <a href="#Eduction-dtl" class="edit-icon edit-icon ripple-effect popup-with-zoom-anim linkbtn"> <i class="icon-feather-plus"></i> ADD EDUCATION</a>
+                            </p>
+
+                            <p>	<strong> BCA (computer Application)</strong></p>
+                            <p>Pune University</p>
+
+                        </div>
+
+
+
+                        <div class="modal-box margin-top-20">
+                            <p class="modal-heading">
+                                IT Skills <a href="#Eduction-dtl" class="ripple-effect popup-with-zoom-anim">
+                                    <i class="icon-feather-edit"></i>
+                                </a>
+                                <a href="#Eduction-dtl" class="edit-icon edit-icon ripple-effect popup-with-zoom-anim linkbtn">
+                                    <i class="icon-feather-plus"></i> ADD EDUCATION
+                                </a>
+                            </p>
+
+
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-xs-12 col-sm-12">
+                        <div class=" color-white dark-blue-box">
+                            <h3 class="color-white"> Your Resume</h3>
+
+                            <p>Resume is the most important document recruiters look for.</p>
+                            <p><strong class="orange-text text-14"> UI Designer CV.docx  </strong></p>
+                            <p><small>Uploaded on Dec/22/2021</small> </p>
+                            <div class="upload-btn-wrapper">
+                                <button class="btn button">Upload Resume</button>
+                                <input type="file" name="myfile" />
+                            </div>
+                            <!-- <a href="#utf-signin-dialog-block" class="button ripple-effect popup-with-zoom-anim">Upload CV <i class="icon-feather-upload"></i></a> -->
+                            <a href="#" class="button"> <i class="icon-feather-download"></i></a>
+                            <a href="#" class="button"> <i class="icon-feather-trash"></i></a>
+                            <p class="m-0"><small>Supported Formats: doc, docx, rtf, pdf, upto 2 MB</small></p>
+
+                        </div>
+
+                        <div id="test1" class="dashboard-box margin-top-20">
+                            <div class="headline">
+                                <h3>Change Password</h3>
+                            </div>
+                            <div class="content with-padding">
+                                <div class="row">
+                                    <div class="col-xl-12 col-md-6 col-sm-6">
+                                        <div class="utf-submit-field">
+                                            <h5>Current Password</h5>
+                                            <input type="password" class="utf-with-border" title="Current Password" data-tippy-placement="top" placeholder="********">
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-12 col-md-6 col-sm-6">
+                                        <div class="utf-submit-field">
+                                            <h5>New Password</h5>
+                                            <input type="password" class="utf-with-border" title="The password must be at least 8 characters" data-tippy-placement="top" placeholder="********">
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-12 col-md-6 col-sm-6">
+                                        <div class="utf-submit-field">
+                                            <h5>Confirm New Password</h5>
+                                            <input type="password" class="utf-with-border" title="The password must be at least 8 characters" data-tippy-placement="top" placeholder="********">
+                                        </div>
+                                    </div>
+                                </div>
+                                <a href="javascript:void(0);" class="button ripple-effect big margin-top-10">Changes Password</a>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </div>
-        </header>
-        <div class="clearfix"></div>
-        <!-- Header Container / End -->
-        <!-- Page Content -->
+
+
+
+        </div>
+    </div>
+</div></div>
+<!-- Footer -->
+<div id="footer">
+    <div class="utf-footer-section-item-block">
         <div class="container">
             <div class="row">
-
-
-                <div class="col-xl-12 col-lg-8">
-
-                    <div class="row">
-                        <div class="col-lg-8 col-md-8 col-xs-12 col-sm-12">
-                            <div class="blue-box candidate-detail">
-                                <div class="row">
-                                    <div class="col-lg-3 col-md-3 col-xs-12 col-sm-3">
-                                        <img src="./images/user-avatar-placeholder.png" class="img-responsive border-white" />
-                                    </div>
-                                    <div class="col-lg-9 col-md-9 col-xs-12 col-sm-9 candidate-details">
-                                        <div class="row">
-                                            <div class="col-lg-12 col-md-12 col-xs-12 col-sm-12">
-
-                                                <p class="name">Candidate Name <a href="#Basic-dtl" class="color-white edit-icon  ripple-effect popup-with-zoom-anim"><i class="icon-feather-edit font-22"></i></a></p>
-                                            </div>
-                                            <div class="col-lg-12 col-md-12 col-xs-12 col-sm-12">
-                                                <p>UX and UI Designer and developer</p>
-                                            </div>
-                                            <div class="col-lg-12 col-md-12 col-xs-12 col-sm-12">	<p> <i class="icon-feather-map-pin"></i> Location</p></div>
-                                            <div class="col-lg-6 col-md-6 col-xs-12 col-sm-6"><p><i class="icon-feather-briefcase"></i> 9 Years Experienced</p></div>
-                                            <div class="col-lg-6 col-md-6 col-xs-12 col-sm-6"><p><i class="icon-material-outline-business-center"></i> 8.5 LPA</p></div>
-                                            <div class="col-lg-6 col-md-6 col-xs-12 col-sm-6"><p><i class="icon-feather-phone"></i>  +91 0123 123 235</p></div>
-                                            <div class="col-lg-6 col-md-6 col-xs-12 col-sm-6"><p><i class="icon-material-baseline-mail-outline"></i> email@domain.com</p></div>
-
-                                        </div>
-
-
-
-
-
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="modal-box margin-top-20">
-                                <p class="modal-heading">Resume Headline <a href="#resume-heading" class="edit-icon ripple-effect popup-with-zoom-anim"> <i class="icon-feather-edit"></i></a></p>
-                                <p>	9 Years Experienced</p>
-                            </div>
-
-                            <div class="modal-box margin-top-20">
-                                <p class="modal-heading">Key Skills <a href="#Key-Skill" class="ripple-effect popup-with-zoom-anim"> <i class="icon-feather-edit"></i></a></p>
-                                <p class="skill-set">	<span> Skill </span> <span> Bootstrap </span> <span> HTML </span> <span> .Net </span> <span> SQL  </span>  </p>
-                            </div>
-
-                            <div class="modal-box margin-top-20">
-                                <p class="modal-heading">Employment<a href="#candidate-dtl" class="ripple-effect popup-with-zoom-anim"> <i class="icon-feather-edit"></i></a> <a href="#candidate-dtl" class="edit-icon linkbtn  ripple-effect popup-with-zoom-anim"> <i class="icon-feather-plus"></i> Add Employment</a></p>
-
-                                <p>	<strong> UX and UI Designer and develope</strong></p>
-                                <p>Company Name</p>
-                                <p>	3 Years Experienced</p>
-                                <p>UX/UI designer and developer</p>
-                                <p class="skill-set"> <strong> Top 5 Key Skills: </strong> 	<span> Skill </span> <span> Bootstrap </span> <span> HTML </span> <span> .Net </span> <span> SQL  </span>  </p>
-                            </div>
-
-                            <div class="modal-box margin-top-20">
-                                <p class="modal-heading">
-                                    Education<a href="#Eduction-dtl" class="ripple-effect popup-with-zoom-anim "> <i class="icon-feather-edit"></i></a>
-                                    <a href="#Eduction-dtl" class="edit-icon edit-icon ripple-effect popup-with-zoom-anim linkbtn"> <i class="icon-feather-plus"></i> ADD EDUCATION</a>
-                                </p>
-
-                                <p>	<strong> BCA (computer Application)</strong></p>
-                                <p>Pune University</p>
-
-                            </div>
-
-
-
-                            <div class="modal-box margin-top-20">
-                                <p class="modal-heading">
-                                    IT Skills <a href="#Eduction-dtl" class="ripple-effect popup-with-zoom-anim">
-                                        <i class="icon-feather-edit"></i>
-                                    </a>
-                                    <a href="#Eduction-dtl" class="edit-icon edit-icon ripple-effect popup-with-zoom-anim linkbtn">
-                                        <i class="icon-feather-plus"></i> ADD EDUCATION
-                                    </a>
-                                </p>
-
-
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-4 col-xs-12 col-sm-12">
-                            <div class=" color-white dark-blue-box">
-                                <h3 class="color-white"> Your Resume</h3>
-
-                                <p>Resume is the most important document recruiters look for.</p>
-                                <p><strong class="orange-text text-14"> UI Designer CV.docx  </strong></p>
-                                <p><small>Uploaded on Dec/22/2021</small> </p>
-                                <div class="upload-btn-wrapper">
-                                    <button class="btn button">Upload Resume</button>
-                                    <input type="file" name="myfile" />
-                                </div>
-                                <!-- <a href="#utf-signin-dialog-block" class="button ripple-effect popup-with-zoom-anim">Upload CV <i class="icon-feather-upload"></i></a> -->
-                                <a href="#" class="button"> <i class="icon-feather-download"></i></a>
-                                <a href="#" class="button"> <i class="icon-feather-trash"></i></a>
-                                <p class="m-0"><small>Supported Formats: doc, docx, rtf, pdf, upto 2 MB</small></p>
-
-                            </div>
-
-                            <div id="test1" class="dashboard-box margin-top-20">
-                                <div class="headline">
-                                    <h3>Change Password</h3>
-                                </div>
-                                <div class="content with-padding">
-                                    <div class="row">
-                                        <div class="col-xl-12 col-md-6 col-sm-6">
-                                            <div class="utf-submit-field">
-                                                <h5>Current Password</h5>
-                                                <input type="password" class="utf-with-border" title="Current Password" data-tippy-placement="top" placeholder="********">
-                                            </div>
-                                        </div>
-                                        <div class="col-xl-12 col-md-6 col-sm-6">
-                                            <div class="utf-submit-field">
-                                                <h5>New Password</h5>
-                                                <input type="password" class="utf-with-border" title="The password must be at least 8 characters" data-tippy-placement="top" placeholder="********">
-                                            </div>
-                                        </div>
-                                        <div class="col-xl-12 col-md-6 col-sm-6">
-                                            <div class="utf-submit-field">
-                                                <h5>Confirm New Password</h5>
-                                                <input type="password" class="utf-with-border" title="The password must be at least 8 characters" data-tippy-placement="top" placeholder="********">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <a href="javascript:void(0);" class="button ripple-effect big margin-top-10">Changes Password</a>
-                                </div>
-                            </div>
-
-                        </div>
+                <div class="col-xl-4 col-md-12">
+                    <div class="utf-footer-item-links">
+                        <a href="index.html"><img class="footer-logo" src="images/footer_logo.png" alt=""></a>
+                        <p>Lorem Ipsum is simply dummy text of printing and type setting industry. Lorem Ipsum been industry standard dummy text ever since, when unknown printer took a galley type scrambled.</p>
                     </div>
                 </div>
 
-
-
-            </div>
-        </div>
-    </div></div>
-    <!-- Footer -->
-    <div id="footer">
-        <div class="utf-footer-section-item-block">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xl-4 col-md-12">
-                        <div class="utf-footer-item-links">
-                            <a href="index.html"><img class="footer-logo" src="images/footer_logo.png" alt=""></a>
-                            <p>Lorem Ipsum is simply dummy text of printing and type setting industry. Lorem Ipsum been industry standard dummy text ever since, when unknown printer took a galley type scrambled.</p>
-                        </div>
+                <div class="col-xl-2 col-md-3 col-sm-6">
+                    <div class="utf-footer-item-links">
+                        <h3>Job Categories</h3>
+                        <ul>
+                            <li><a href="jobs-search-list.html"><i class="icon-feather-chevron-right"></i> <span>Developement</span></a></li>
+                            <li><a href="jobs-search-list.html"><i class="icon-feather-chevron-right"></i> <span>Designing</span></a></li>
+                            <li><a href="jobs-search-list.html"><i class="icon-feather-chevron-right"></i> <span>Marketing</span></a></li>
+                            <li><a href="jobs-search-list.html"><i class="icon-feather-chevron-right"></i> <span>Data Analytics</span></a></li>
+                            <li><a href="#"><i class="icon-feather-chevron-right"></i> <span>Post New Job</span></a></li>
+                        </ul>
                     </div>
+                </div>
 
-                    <div class="col-xl-2 col-md-3 col-sm-6">
-                        <div class="utf-footer-item-links">
-                            <h3>Job Categories</h3>
-                            <ul>
-                                <li><a href="jobs-search-list.html"><i class="icon-feather-chevron-right"></i> <span>Developement</span></a></li>
-                                <li><a href="jobs-search-list.html"><i class="icon-feather-chevron-right"></i> <span>Designing</span></a></li>
-                                <li><a href="jobs-search-list.html"><i class="icon-feather-chevron-right"></i> <span>Marketing</span></a></li>
-                                <li><a href="jobs-search-list.html"><i class="icon-feather-chevron-right"></i> <span>Data Analytics</span></a></li>
-                                <li><a href="#"><i class="icon-feather-chevron-right"></i> <span>Post New Job</span></a></li>
-                            </ul>
-                        </div>
+                <div class="col-xl-2 col-md-3 col-sm-6">
+                    <div class="utf-footer-item-links">
+                        <h3>Job Type</h3>
+                        <ul>
+                            <li><a href="jobs-search-list.html"><i class="icon-feather-chevron-right"></i> <span>Work from Home</span></a></li>
+                            <li><a href="jobs-search-list.html"><i class="icon-feather-chevron-right"></i> <span>Internship Job</span></a></li>
+                            <li><a href="jobs-search-list.html"><i class="icon-feather-chevron-right"></i> <span>Freelancer Job</span></a></li>
+                            <li><a href="jobs-search-list.html"><i class="icon-feather-chevron-right"></i> <span>Part Time Job</span></a></li>
+                            <li><a href="jobs-search-list.html"><i class="icon-feather-chevron-right"></i> <span>Full Time Job</span></a></li>
+                        </ul>
                     </div>
+                </div>
 
-                    <div class="col-xl-2 col-md-3 col-sm-6">
-                        <div class="utf-footer-item-links">
-                            <h3>Job Type</h3>
-                            <ul>
-                                <li><a href="jobs-search-list.html"><i class="icon-feather-chevron-right"></i> <span>Work from Home</span></a></li>
-                                <li><a href="jobs-search-list.html"><i class="icon-feather-chevron-right"></i> <span>Internship Job</span></a></li>
-                                <li><a href="jobs-search-list.html"><i class="icon-feather-chevron-right"></i> <span>Freelancer Job</span></a></li>
-                                <li><a href="jobs-search-list.html"><i class="icon-feather-chevron-right"></i> <span>Part Time Job</span></a></li>
-                                <li><a href="jobs-search-list.html"><i class="icon-feather-chevron-right"></i> <span>Full Time Job</span></a></li>
-                            </ul>
-                        </div>
+                <div class="col-xl-2 col-md-3 col-sm-6">
+                    <div class="utf-footer-item-links">
+                        <h3>Resources</h3>
+                        <ul>
+                            <li><a href="#"><i class="icon-feather-chevron-right"></i> <span>My Account</span></a></li>
+                            <li><a href="#"><i class="icon-feather-chevron-right"></i> <span>Support</span></a></li>
+                            <li><a href="#"><i class="icon-feather-chevron-right"></i> <span>How It Works</span></a></li>
+                            <li><a href="#"><i class="icon-feather-chevron-right"></i> <span>Underwriting</span></a></li>
+                            <li><a href="#"><i class="icon-feather-chevron-right"></i> <span>Employers</span></a></li>
+                        </ul>
                     </div>
+                </div>
 
-                    <div class="col-xl-2 col-md-3 col-sm-6">
-                        <div class="utf-footer-item-links">
-                            <h3>Resources</h3>
-                            <ul>
-                                <li><a href="#"><i class="icon-feather-chevron-right"></i> <span>My Account</span></a></li>
-                                <li><a href="#"><i class="icon-feather-chevron-right"></i> <span>Support</span></a></li>
-                                <li><a href="#"><i class="icon-feather-chevron-right"></i> <span>How It Works</span></a></li>
-                                <li><a href="#"><i class="icon-feather-chevron-right"></i> <span>Underwriting</span></a></li>
-                                <li><a href="#"><i class="icon-feather-chevron-right"></i> <span>Employers</span></a></li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="col-xl-2 col-md-3 col-sm-6">
-                        <div class="utf-footer-item-links">
-                            <h3>Quick Links</h3>
-                            <ul>
-                                <li><a href="jobs-search-list.html"><i class="icon-feather-chevron-right"></i> <span>Jobs Listing</span></a></li>
-                                <li><a href="about-us.html"><i class="icon-feather-chevron-right"></i> <span>About Us</span></a></li>
-                                <li><a href="contact.html"><i class="icon-feather-chevron-right"></i> <span>Contact Us</span></a></li>
-                                <li><a href="privacy-policy.html"><i class="icon-feather-chevron-right"></i> <span>Privacy Policy</span></a></li>
-                                <li><a href="terms-condition.html"><i class="icon-feather-chevron-right"></i> <span>Term & Condition</span></a></li>
-                            </ul>
-                        </div>
+                <div class="col-xl-2 col-md-3 col-sm-6">
+                    <div class="utf-footer-item-links">
+                        <h3>Quick Links</h3>
+                        <ul>
+                            <li><a href="jobs-search-list.html"><i class="icon-feather-chevron-right"></i> <span>Jobs Listing</span></a></li>
+                            <li><a href="about-us.html"><i class="icon-feather-chevron-right"></i> <span>About Us</span></a></li>
+                            <li><a href="contact.html"><i class="icon-feather-chevron-right"></i> <span>Contact Us</span></a></li>
+                            <li><a href="privacy-policy.html"><i class="icon-feather-chevron-right"></i> <span>Privacy Policy</span></a></li>
+                            <li><a href="terms-condition.html"><i class="icon-feather-chevron-right"></i> <span>Term & Condition</span></a></li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </div>
-
-        <!-- Footer Copyrights -->
-        <div class="utf-footer-copyright-item">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xl-12">Copyright &copy; 2021 All Rights Reserved.</div>
-                </div>
-            </div>
-        </div>
-        <!-- Footer Copyrights / End -->
-        <!-- Footer / End -->
-        <!-- Wrapper / End -->
-        <!-- Sign In Popup -->
-        <!-- Button trigger modal -->
-
-        <div id="resume-heading" class="zoom-anim-dialog mfp-hide Main-mpf">
-            <div class="utf-signin-form-part">
-                <div class="utf-popup-container-part-tabs">
-
-                    <div class="utf-popup-tab-content-item">
-                        <div class="utf-welcome-text-item">
-                            <h3>Resume Heading</h3>
-                        </div>
-                        <form method="post">
-                            <div class="utf-no-border">
-                                <textarea class="utf-with-border" placeholder="Web Designer 9 Years Exp."></textarea>
-                            </div>
-                    </div>
-                </div>
-                </form>
-                <div class="text-right">
-                    <a href="#" data-dismiss="Main-mpf" class="button gray utf-ripple-effect-dark">Cancel</a>
-                    <a href="#" class="button ripple-effect">Save</a>
-                </div>
-            </div>
-        </div>
-
-
-
-        <div id="Key-Skill" class="zoom-anim-dialog mfp-hide Main-mpf">
-            <div class="utf-signin-form-part">
-                <div class="utf-popup-container-part-tabs">
-                    <div class="utf-popup-tab-content-item">
-                        <div class="utf-welcome-text-item">
-                            <h3>Add Your Key Skill</h3>
-                        </div>
-                        <form method="post">
-                            <div class="utf-no-border">
-                                <textarea class="utf-with-border" placeholder=".Net, SQL, Jquery, Javascrip "></textarea>
-                            </div>
-                    </div>
-                </div>
-                </form>
-                <div class="text-right">
-                    <a href="#" data-dismiss="Main-mpf" class="button gray utf-ripple-effect-dark">Cancel</a>
-                    <a href="#" class="button ripple-effect">Save</a>
-                </div>
-            </div>
-        </div>
-
-
-
-
-
-
-
-
-
-
     </div>
+
+    <!-- Footer Copyrights -->
+    <div class="utf-footer-copyright-item">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">Copyright &copy; 2021 All Rights Reserved.</div>
+            </div>
+        </div>
     </div>
-    <div id="Basic-dtl" class="zoom-anim-dialog mfp-hide  Main-mpf">
+    <!-- Footer Copyrights / End -->
+    <!-- Footer / End -->
+    <!-- Wrapper / End -->
+    <!-- Sign In Popup -->
+    <!-- Button trigger modal -->
+
+    <div id="resume-heading" class="zoom-anim-dialog mfp-hide Main-mpf">
         <div class="utf-signin-form-part">
-
             <div class="utf-popup-container-part-tabs">
-
 
                 <div class="utf-popup-tab-content-item">
                     <div class="utf-welcome-text-item">
-                        <h3>Basic Details</h3>
+                        <h3>Resume Heading</h3>
                     </div>
                     <form method="post">
                         <div class="utf-no-border">
-                            <input type="text" class="utf-with-border" placeholder="Name" required />
+                            <textarea class="utf-with-border" placeholder="Web Designer 9 Years Exp."></textarea>
                         </div>
-                        <div class="utf-no-border">
-                            <input type="text" class="utf-with-border" placeholder="Total year of Experiencen" required />
-                        </div>
-                        <div class="utf-no-border">
-
-                            <div class="utf-no-border margin-bottom-20">
-                                <p class="margin-bottom-0">Annual Salary *</p>
-                                <div class="row">
-                                    <div class="col-lg-6  utf-intro-search-field-item">
-                                        <select class="selectpicker default utf-with-border d-inline" data-size="5" title="1 LPA">
-                                            <option>1 LPA</option>
-                                            <option>2 LPA</option>
-                                            <option>>3 LPA</option>
-                                            <option>>4 LPA</option>
-                                            <option>>5 LPA</option>
-                                            <option>>6 LPA</option>
-                                            <option>>7 LPA </option>
-                                        </select>
-                                    </div>
-                                    <div class="col-lg-6  utf-intro-search-field-item">
-
-                                        <select class="selectpicker default utf-with-border d-inline" data-size="5" title=" 0 Thousand">
-                                            <option> 0 Thousand </option>
-                                            <option> 10 Thousand </option>
-                                            <option> 20 Thousand </option>
-                                            <option> 30 Thousand </option>
-                                            <option> 40 Thousand </option>
-                                            <option> 50 Thousand </option>
-                                            <option> 60 Thousand </option>
-                                            <option>70 Thousand </option>
-                                            <option> 80 Thousand </option>
-                                            <option>90 Thousand </option>
-
-                                        </select>
-                                    </div>
-                                </div>
-
-                                <div class="form-group-inline">
-                                    <p class="margin-bottom-0">current Location</p>
-                                    <div class="form-check">
-                                        <label class="form-check-label" for="radio1">
-                                            <input type="radio" class="form-check-input" id="radio1" name="optradio" value="option1" checked>India
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <label class="form-check-label" for="radio2">
-                                            <input type="radio" class="form-check-input" id="radio2" name="optradio" value="option2">Outside of India
-                                        </label>
-                                    </div>
-
-                                </div>
-
-                                <div class="utf-no-border">
-                                    <input type="text" class="utf-with-border" name="emailaddress-register" id="emailaddress-register" placeholder="Pune" required />
-                                </div>
-                            </div>
-
-                        </div>
-
-
-
-                        <div class="utf-no-border">
-                            <input type="text" class="utf-with-border" name="emailaddress-register" id="emailaddress-register" placeholder="Mobile Number" required />
-                        </div>
-
-                        <div class="utf-no-border">
-                            <input type="text" class="utf-with-border" name="emailaddress-register" id="emailaddress-register" placeholder="Email Address" required />
-                        </div>
-
-
-
-                    </form>
-                    <div class="text-right">
-                        <a data-dismiss="Main-mpf" class="button gray utf-ripple-effect-dark">Cancel</a>
-                        <a class="button ripple-effect">Save</a>
-                    </div>
                 </div>
+            </div>
+            </form>
+            <div class="text-right">
+                <a href="#" data-dismiss="Main-mpf" class="button gray utf-ripple-effect-dark">Cancel</a>
+                <a href="#" class="button ripple-effect">Save</a>
             </div>
         </div>
     </div>
 
-    <div id="Eduction-dtl" class="zoom-anim-dialog mfp-hide  Main-mpf">
+
+
+    <div id="Key-Skill" class="zoom-anim-dialog mfp-hide Main-mpf">
         <div class="utf-signin-form-part">
-
             <div class="utf-popup-container-part-tabs">
-
-
                 <div class="utf-popup-tab-content-item">
                     <div class="utf-welcome-text-item">
-                        <h3>Education Details</h3>
+                        <h3>Add Your Key Skill</h3>
                     </div>
                     <form method="post">
                         <div class="utf-no-border">
-                            <input type="text" class="utf-with-border" placeholder="Name" required />
+                            <textarea class="utf-with-border" placeholder=".Net, SQL, Jquery, Javascrip "></textarea>
                         </div>
-                        <div class="utf-no-border">
-                            <input type="text" class="utf-with-border" placeholder="Total year of Experiencen" required />
-                        </div>
-                        <div class="utf-no-border">
-
-                            <div class="utf-no-border margin-bottom-20">
-                                <p class="margin-bottom-0">Annual Salary *</p>
-                                <div class="row">
-                                    <div class="col-lg-6  utf-intro-search-field-item">
-                                        <select class="selectpicker default utf-with-border d-inline" data-size="5" title="1 LPA">
-                                            <option>1 LPA</option>
-                                            <option>2 LPA</option>
-                                            <option>>3 LPA</option>
-                                            <option>>4 LPA</option>
-                                            <option>>5 LPA</option>
-                                            <option>>6 LPA</option>
-                                            <option>>7 LPA </option>
-                                        </select>
-                                    </div>
-                                    <div class="col-lg-6  utf-intro-search-field-item">
-
-                                        <select class="selectpicker default utf-with-border d-inline" data-size="5" title=" 0 Thousand">
-                                            <option> 0 Thousand </option>
-                                            <option> 10 Thousand </option>
-                                            <option> 20 Thousand </option>
-                                            <option> 30 Thousand </option>
-                                            <option> 40 Thousand </option>
-                                            <option> 50 Thousand </option>
-                                            <option> 60 Thousand </option>
-                                            <option>70 Thousand </option>
-                                            <option> 80 Thousand </option>
-                                            <option>90 Thousand </option>
-
-                                        </select>
-                                    </div>
-                                </div>
-
-                                <div class="form-group-inline">
-                                    <p class="margin-bottom-0">current Location</p>
-                                    <div class="form-check">
-                                        <label class="form-check-label" for="radio1">
-                                            <input type="radio" class="form-check-input" id="radio1" name="optradio" value="option1" checked>India
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <label class="form-check-label" for="radio2">
-                                            <input type="radio" class="form-check-input" id="radio2" name="optradio" value="option2">Outside of India
-                                        </label>
-                                    </div>
-
-                                </div>
-
-                                <div class="utf-no-border">
-                                    <input type="text" class="utf-with-border" name="emailaddress-register" id="emailaddress-register" placeholder="Pune" required />
-                                </div>
-                            </div>
-
-                        </div>
-
-
-
-                        <div class="utf-no-border">
-                            <input type="text" class="utf-with-border" name="emailaddress-register" id="emailaddress-register" placeholder="Mobile Number" required />
-                        </div>
-
-                        <div class="utf-no-border">
-                            <input type="text" class="utf-with-border" name="emailaddress-register" id="emailaddress-register" placeholder="Email Address" required />
-                        </div>
-
-
-
-                    </form>
-                    <div class="text-right">
-                        <a data-dismiss="Main-mpf" class="button gray utf-ripple-effect-dark">Cancel</a>
-                        <a class="button ripple-effect">Save</a>
-                    </div>
                 </div>
+            </div>
+            </form>
+            <div class="text-right">
+                <a href="#" data-dismiss="Main-mpf" class="button gray utf-ripple-effect-dark">Cancel</a>
+                <a href="#" class="button ripple-effect">Save</a>
             </div>
         </div>
     </div>
@@ -556,87 +356,156 @@
 
 
 
-    <div id="candidate-dtl" class="zoom-anim-dialog mfp-hide  Main-mpf">
-        <div class="utf-signin-form-part">
-
-            <div class="utf-popup-container-part-tabs">
 
 
-                <div class="utf-popup-tab-content-item">
-                    <div class="utf-welcome-text-item">
-                        <h3>Add Employment Details</h3>
+
+
+
+</div>
+    </div>
+<div id="Basic-dtl" class="zoom-anim-dialog mfp-hide  Main-mpf">
+    <div class="utf-signin-form-part">
+
+        <div class="utf-popup-container-part-tabs">
+
+
+            <div class="utf-popup-tab-content-item">
+                <div class="utf-welcome-text-item">
+                    <h3>Basic Details</h3>
+                </div>
+                <form method="post">
+                    <div class="utf-no-border">
+                        @*<input type="text" class="utf-with-border" placeholder="Name" required />*@
+                        @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
                     </div>
-                    <form method="post">
-                        <div class="utf-no-border">
-                            <input type="text" class="utf-with-border" placeholder="Your Designation" required />
-                        </div>
-                        <div class="utf-no-border">
-                            <input type="text" class="utf-with-border" placeholder="Your Organization" required />
-                        </div>
-                        <div class="utf-no-border">
-                            <input type="text" class="utf-with-border" placeholder="Is this your current company?" required />
-                        </div>
-                        <div class="utf-no-border">
+                    <div class="utf-no-border">
+                        @*<input type="text" class="utf-with-border" placeholder="Total year of Experiencen" required />*@
+                        @Html.EditorFor(model => model.TotalYearsOfExperience, new { htmlAttributes = new { @class = "form-control" } })
+                    </div>
+                    <div class="utf-no-border">
+
+                        <div class="utf-no-border margin-bottom-20">
+                            <p class="margin-bottom-0">Annual Salary *</p>
+                            <div class="row">
+                                <div class="col-lg-6  utf-intro-search-field-item">
+                                    @Html.ListBoxFor(model => model.AnnualSalaryLPA, new List<SelectListItem>
+                                         {
+                                            new SelectListItem{ Text="1 LPA", Value = "1" },
+                                            new SelectListItem{ Text="2 LPA", Value = "2" },
+                                            new SelectListItem{ Text="3 LPA", Value = "3" },
+                                            new SelectListItem{ Text="4 LPA", Value = "4" },
+                                            new SelectListItem{ Text="5 LPA", Value = "5" },
+                                            new SelectListItem{ Text="6 LPA", Value = "6" },
+                                            new SelectListItem{ Text="7 LPA", Value = "7" },
+                                         } , new { htmlAttributes = new { @class = "form-control" } })
+                                @*<select class="selectpicker default utf-with-border d-inline" data-size="5" title="1 LPA">
+                                    <option></option>
+                                    <option>2 LPA</option>
+                                    <option>>3 LPA</option>
+                                    <option>>4 LPA</option>
+                                    <option>>5 LPA</option>
+                                    <option>>6 LPA</option>
+                                    <option>>7 LPA </option>
+                                </select>*@
+                                </div>
+                                <div class="col-lg-6  utf-intro-search-field-item">
+                                    @Html.ListBoxFor(model => model.AnnualSalaryThousand, new List<SelectListItem>
+    {
+       new SelectListItem{ Text="0 Thousand", Value = "0" },
+       new SelectListItem{ Text="10 Thousand", Value = "10" },
+       new SelectListItem{ Text="20 Thousand", Value = "20" },
+       new SelectListItem{ Text="30 Thousand", Value = "30" },
+       new SelectListItem{ Text="40 Thousand", Value = "40" },
+       new SelectListItem{ Text="50 Thousand", Value = "50" },
+       new SelectListItem{ Text="60 Thousand", Value = "60" },
+       new SelectListItem{ Text="70 Thousand", Value = "70" },
+       new SelectListItem{ Text="80 Thousand", Value = "80" },
+       new SelectListItem{ Text="90 Thousand", Value = "90" },
+    } , new { htmlAttributes = new { @class = "form-control" } })
+                                @*<select class="selectpicker default utf-with-border d-inline" data-size="5" title=" 0 Thousand">
+        <option> 0 Thousand </option>
+        <option> 10 Thousand </option>
+        <option> 20 Thousand </option>
+        <option> 30 Thousand </option>
+        <option> 40 Thousand </option>
+        <option> 50 Thousand </option>
+        <option> 60 Thousand </option>
+        <option>70 Thousand </option>
+        <option> 80 Thousand </option>
+        <option>90 Thousand </option>
+
+    </select>*@
+                                </div>
+                            </div>
+
                             <div class="form-group-inline">
-                                <p class="margin-bottom-0">Is this your current company?</p>
+                                <p class="margin-bottom-0">current Location</p>
                                 <div class="form-check">
-                                    <label class="form-check-label" for="radio1">
-                                        <input type="radio" class="form-check-input" id="radio1" name="optradio" value="option1" checked>Yes
-                                    </label>
+                                    @Html.EditorFor(model => model.CurrentLocation, new { htmlAttributes = new { @class = "form-control" } })
+                                    @*<label class="form-check-label" for="radio1">
+            <input type="radio" class="form-check-input" id="radio1" name="optradio" value="option1" checked>India
+        </label>*@
                                 </div>
                                 <div class="form-check">
                                     <label class="form-check-label" for="radio2">
-                                        <input type="radio" class="form-check-input" id="radio2" name="optradio" value="option2">No
+                                        <input type="radio" class="form-check-input" id="radio2" name="optradio" value="option2">Outside of India
                                     </label>
                                 </div>
+
+                            </div>
+
+                            <div class="utf-no-border">
+                                <input type="text" class="utf-with-border" name="emailaddress-register" id="emailaddress-register" placeholder="Pune" required />
                             </div>
                         </div>
 
+                    </div>
 
-                        <div class="utf-no-border">
-                            <input type="text" class="utf-with-border" name="emailaddress-register" id="emailaddress-register" placeholder="Email Address" required />
-                        </div>
+
+
+                    <div class="utf-no-border">
+                        <input type="text" class="utf-with-border" name="emailaddress-register" id="emailaddress-register" placeholder="Mobile Number" required />
+                    </div>
+
+                    <div class="utf-no-border">
+                        <input type="text" class="utf-with-border" name="emailaddress-register" id="emailaddress-register" placeholder="Email Address" required />
+                    </div>
+
+                    <div class="text-right">
+                        <a data-dismiss="Main-mpf" class="button gray utf-ripple-effect-dark">Cancel</a>
+                        <input type="submit" value="Add" id="Submit" class="button ripple-effect" onclick="location.href='@Url.Action("SaveBasicDetails","EmployeeProfile")'" />
+                    </div>
+
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="Eduction-dtl" class="zoom-anim-dialog mfp-hide  Main-mpf">
+    <div class="utf-signin-form-part">
+
+        <div class="utf-popup-container-part-tabs">
+
+
+            <div class="utf-popup-tab-content-item">
+                <div class="utf-welcome-text-item">
+                    <h3>Education Details</h3>
+                </div>
+                <form method="post">
+                    <div class="utf-no-border">
+                        <input type="text" class="utf-with-border" placeholder="Name" required />
+                    </div>
+                    <div class="utf-no-border">
+                        <input type="text" class="utf-with-border" placeholder="Total year of Experiencen" required />
+                    </div>
+                    <div class="utf-no-border">
+
                         <div class="utf-no-border margin-bottom-20">
-                            <p class="margin-bottom-0">Started Working From</p>
+                            <p class="margin-bottom-0">Annual Salary *</p>
                             <div class="row">
-                                <div class="col-lg-6 utf-intro-search-field-item">
-                                    <select class="selectpicker default utf-with-border d-inline" data-size="5" title="Select Year">
-                                        <option>1995</option>
-                                        <option>1995</option>
-                                        <option>1995</option>
-                                        <option>1995</option>
-                                        <option>1995</option>
-                                        <option>1995</option>
-                                        <option>1995</option>
-                                    </select>
-                                </div>
-                                <div class="col-lg-6 utf-intro-search-field-item">
-
-                                    <select class="selectpicker default utf-with-border d-inline" data-size="5" title="Select Month">
-                                        <option>Jan</option>
-                                        <option>Feb</option>
-                                        <option>Mar</option>
-                                        <option>Apr</option>
-                                        <option>May</option>
-                                        <option>June</option>
-                                        <option>Jul</option>
-                                        <option>Aug</option>
-                                        <option>Sep</option>
-                                        <option>Oct</option>
-                                        <option>Nov</option>
-                                        <option>Dec</option>
-                                    </select>
-                                </div>
-                            </div>
-
-
-                        </div>
-
-
-                        <div class="utf-no-border margin-bottom-20">
-                            <p class="margin-bottom-0">Current Salary *</p>
-                            <div class="row">
-                                <div class="col-lg-6 utf-intro-search-field-item">
+                                <div class="col-lg-6  utf-intro-search-field-item">
                                     <select class="selectpicker default utf-with-border d-inline" data-size="5" title="1 LPA">
                                         <option>1 LPA</option>
                                         <option>2 LPA</option>
@@ -665,41 +534,198 @@
                                 </div>
                             </div>
 
+                            <div class="form-group-inline">
+                                <p class="margin-bottom-0">current Location</p>
+                                <div class="form-check">
+                                    <label class="form-check-label" for="radio1">
+                                        <input type="radio" class="form-check-input" id="radio1" name="optradio" value="option1" checked>India
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <label class="form-check-label" for="radio2">
+                                        <input type="radio" class="form-check-input" id="radio2" name="optradio" value="option2">Outside of India
+                                    </label>
+                                </div>
 
+                            </div>
+
+                            <div class="utf-no-border">
+                                <input type="text" class="utf-with-border" name="emailaddress-register" id="emailaddress-register" placeholder="Pune" required />
+                            </div>
                         </div>
 
-
-                        <div class="utf-no-border">
-                            <p class="margin-bottom-0">Expert in skills that you think are important for current employment</p>
-                            <input type="text" class="utf-with-border" placeholder="Skill Set" required />
-                        </div>
-                        <div class="utf-no-border">
-                            <p class="margin-bottom-0"> Describe your Job Profile</p>
-                            <textarea class="form-control" rows="5"></textarea>
-                        </div>
-
-
-                    </form>
-                    <div class="text-right">
-                        <a data-dismiss="Main-mpf" class="button gray utf-ripple-effect-dark">Cancel</a>
-                        <a class="button ripple-effect">Save</a>
                     </div>
+
+
+
+                    <div class="utf-no-border">
+                        <input type="text" class="utf-with-border" name="emailaddress-register" id="emailaddress-register" placeholder="Mobile Number" required />
+                    </div>
+
+                    <div class="utf-no-border">
+                        <input type="text" class="utf-with-border" name="emailaddress-register" id="emailaddress-register" placeholder="Email Address" required />
+                    </div>
+
+
+
+                </form>
+                <div class="text-right">
+                    <a data-dismiss="Main-mpf" class="button gray utf-ripple-effect-dark">Cancel</a>
+                    <a class="button ripple-effect">Save</a>
                 </div>
             </div>
         </div>
     </div>
-    <!-- Sign In Popup / End -->
-    <!-- Scripts -->
-    <script src="js/jquery-3.3.1.min.js"></script>
-    <script src="js/jquery-migrate-3.0.0.min.js"></script>
-    <script src="js/mmenu.min.js"></script>
-    <script src="js/tippy.all.min.js"></script>
-    <script src="js/simplebar.min.js"></script>
-    <script src="js/bootstrap-slider.min.js"></script>
-    <script src="js/bootstrap-select.min.js"></script>
-    <script src="js/snackbar.js"></script>
-    <script src="js/clipboard.min.js"></script>
-    <script src="js/counterup.min.js"></script>
-    <script src="js/magnific-popup.min.js"></script>
-    <script src="js/slick.min.js"></script>
-    <script src="js/custom_jquery.js"></script>
+</div>
+
+
+
+
+
+<div id="candidate-dtl" class="zoom-anim-dialog mfp-hide  Main-mpf">
+    <div class="utf-signin-form-part">
+
+        <div class="utf-popup-container-part-tabs">
+
+
+            <div class="utf-popup-tab-content-item">
+                <div class="utf-welcome-text-item">
+                    <h3>Add Employment Details</h3>
+                </div>
+                <form method="post">
+                    <div class="utf-no-border">
+                        <input type="text" class="utf-with-border" placeholder="Your Designation" required />
+                    </div>
+                    <div class="utf-no-border">
+                        <input type="text" class="utf-with-border" placeholder="Your Organization" required />
+                    </div>
+                    <div class="utf-no-border">
+                        <input type="text" class="utf-with-border" placeholder="Is this your current company?" required />
+                    </div>
+                    <div class="utf-no-border">
+                        <div class="form-group-inline">
+                            <p class="margin-bottom-0">Is this your current company?</p>
+                            <div class="form-check">
+                                <label class="form-check-label" for="radio1">
+                                    <input type="radio" class="form-check-input" id="radio1" name="optradio" value="option1" checked>Yes
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <label class="form-check-label" for="radio2">
+                                    <input type="radio" class="form-check-input" id="radio2" name="optradio" value="option2">No
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="utf-no-border">
+                        <input type="text" class="utf-with-border" name="emailaddress-register" id="emailaddress-register" placeholder="Email Address" required />
+                    </div>
+                    <div class="utf-no-border margin-bottom-20">
+                        <p class="margin-bottom-0">Started Working From</p>
+                        <div class="row">
+                            <div class="col-lg-6 utf-intro-search-field-item">
+                                <select class="selectpicker default utf-with-border d-inline" data-size="5" title="Select Year">
+                                    <option>1995</option>
+                                    <option>1995</option>
+                                    <option>1995</option>
+                                    <option>1995</option>
+                                    <option>1995</option>
+                                    <option>1995</option>
+                                    <option>1995</option>
+                                </select>
+                            </div>
+                            <div class="col-lg-6 utf-intro-search-field-item">
+
+                                <select class="selectpicker default utf-with-border d-inline" data-size="5" title="Select Month">
+                                    <option>Jan</option>
+                                    <option>Feb</option>
+                                    <option>Mar</option>
+                                    <option>Apr</option>
+                                    <option>May</option>
+                                    <option>June</option>
+                                    <option>Jul</option>
+                                    <option>Aug</option>
+                                    <option>Sep</option>
+                                    <option>Oct</option>
+                                    <option>Nov</option>
+                                    <option>Dec</option>
+                                </select>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+
+                    <div class="utf-no-border margin-bottom-20">
+                        <p class="margin-bottom-0">Current Salary *</p>
+                        <div class="row">
+                            <div class="col-lg-6 utf-intro-search-field-item">
+                                <select class="selectpicker default utf-with-border d-inline" data-size="5" title="1 LPA">
+                                    <option>1 LPA</option>
+                                    <option>2 LPA</option>
+                                    <option>>3 LPA</option>
+                                    <option>>4 LPA</option>
+                                    <option>>5 LPA</option>
+                                    <option>>6 LPA</option>
+                                    <option>>7 LPA </option>
+                                </select>
+                            </div>
+                            <div class="col-lg-6  utf-intro-search-field-item">
+
+                                <select class="selectpicker default utf-with-border d-inline" data-size="5" title=" 0 Thousand">
+                                    <option> 0 Thousand </option>
+                                    <option> 10 Thousand </option>
+                                    <option> 20 Thousand </option>
+                                    <option> 30 Thousand </option>
+                                    <option> 40 Thousand </option>
+                                    <option> 50 Thousand </option>
+                                    <option> 60 Thousand </option>
+                                    <option>70 Thousand </option>
+                                    <option> 80 Thousand </option>
+                                    <option>90 Thousand </option>
+
+                                </select>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+
+                    <div class="utf-no-border">
+                        <p class="margin-bottom-0">Expert in skills that you think are important for current employment</p>
+                        <input type="text" class="utf-with-border" placeholder="Skill Set" required />
+                    </div>
+                    <div class="utf-no-border">
+                        <p class="margin-bottom-0"> Describe your Job Profile</p>
+                        <textarea class="form-control" rows="5"></textarea>
+                    </div>
+
+
+                </form>
+                <div class="text-right">
+                    <a data-dismiss="Main-mpf" class="button gray utf-ripple-effect-dark">Cancel</a>
+                    <a class="button ripple-effect">Save</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Sign In Popup / End -->
+<!-- Scripts -->
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/jquery-migrate-3.0.0.min.js"></script>
+<script src="js/mmenu.min.js"></script>
+<script src="js/tippy.all.min.js"></script>
+<script src="js/simplebar.min.js"></script>
+<script src="js/bootstrap-slider.min.js"></script>
+<script src="js/bootstrap-select.min.js"></script>
+<script src="js/snackbar.js"></script>
+<script src="js/clipboard.min.js"></script>
+<script src="js/counterup.min.js"></script>
+<script src="js/magnific-popup.min.js"></script>
+<script src="js/slick.min.js"></script>
+<script src="js/custom_jquery.js"></script>
