@@ -2,6 +2,7 @@
 using CustomAuthorizationFilter.Models;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -33,23 +34,34 @@ namespace CustomAuthorizationFilter.Controllers
         }
 
        
-        
+        [HttpPost]
         public ActionResult SaveBasicDetails(JobSeeker jobSeeker)
         {
             if (ModelState.IsValid)
             {
                 if (Session["UserId"] != null)
                 {
-                    var userId = Session["UserId"].ToString();
-                    var usr = (from user in db.Users where user.UserId == userId select user).ToList<User>();
-                    jobSeeker.UserId = usr[0].Id;
-                    jobSeeker.UpdatedDate = DateTime.Now;
-                    jobSeeker.CreatedDate = DateTime.Now;
-
+                    
+                        var userId = Session["UserId"].ToString();
+                        var usr = (from user in db.Users where user.UserId == userId select user).ToList<User>();
+                        jobSeeker.UserId = usr[0].Id;
+                        jobSeeker.UpdatedDate = DateTime.Now;
+                        jobSeeker.CreatedDate = DateTime.Now;
+                }
+                if (jobSeeker.Id != 0)
+                {
+                    db.JobSeekers.Attach(jobSeeker);
+                    db.Entry(jobSeeker).State = EntityState.Modified;
 
                 }
+                else
+                {
+
+
                     db.JobSeekers.Add(jobSeeker);
-                db.SaveChanges();
+                }
+                    db.SaveChanges();
+
                 return RedirectToAction("Index");
             }
 

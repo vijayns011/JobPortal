@@ -103,16 +103,16 @@
                                     <div class="row">
                                         <div class="col-lg-12 col-md-12 col-xs-12 col-sm-12">
 
-                                            <p class="name">Candidate Name <a href="#Basic-dtl" class="color-white edit-icon  ripple-effect popup-with-zoom-anim"><i class="icon-feather-edit font-22"></i></a></p>
+                                            <p class="name">@Model.Name <a href="#Basic-dtl" class="color-white edit-icon  ripple-effect popup-with-zoom-anim"><i class="icon-feather-edit font-22"></i></a></p>
                                         </div>
                                         <div class="col-lg-12 col-md-12 col-xs-12 col-sm-12">
                                             <p>UX and UI Designer and developer</p>
                                         </div>
                                         <div class="col-lg-12 col-md-12 col-xs-12 col-sm-12">	<p> <i class="icon-feather-map-pin"></i> Location</p></div>
                                         <div class="col-lg-6 col-md-6 col-xs-12 col-sm-6"><p><i class="icon-feather-briefcase"></i> 9 Years Experienced</p></div>
-                                        <div class="col-lg-6 col-md-6 col-xs-12 col-sm-6"><p><i class="icon-material-outline-business-center"></i> 8.5 LPA</p></div>
-                                        <div class="col-lg-6 col-md-6 col-xs-12 col-sm-6"><p><i class="icon-feather-phone"></i>  +91 0123 123 235</p></div>
-                                        <div class="col-lg-6 col-md-6 col-xs-12 col-sm-6"><p><i class="icon-material-baseline-mail-outline"></i> email@domain.com</p></div>
+                                        <div class="col-lg-6 col-md-6 col-xs-12 col-sm-6"><p><i class="icon-material-outline-business-center"></i> @Model.AnnualSalaryLPA L @Model.AnnualSalaryThousand T LPA</p></div>
+                                        <div class="col-lg-6 col-md-6 col-xs-12 col-sm-6"><p><i class="icon-feather-phone"></i>  @Model.PhoneNumber</p></div>
+                                        <div class="col-lg-6 col-md-6 col-xs-12 col-sm-6"><p><i class="icon-material-baseline-mail-outline"></i> @Session["UserId"]</p></div>
 
                                     </div>
 
@@ -126,7 +126,7 @@
 
                         <div class="modal-box margin-top-20">
                             <p class="modal-heading">Resume Headline <a href="#resume-heading" class="edit-icon ripple-effect popup-with-zoom-anim"> <i class="icon-feather-edit"></i></a></p>
-                            <p>	9 Years Experienced</p>
+                            <p>	@Model.TotalYearsOfExperience  Years Experienced</p>
                         </div>
 
                         <div class="modal-box margin-top-20">
@@ -373,22 +373,23 @@
                 <div class="utf-welcome-text-item">
                     <h3>Basic Details</h3>
                 </div>
-                <form method="post">
-                    <div class="utf-no-border">
-                        @*<input type="text" class="utf-with-border" placeholder="Name" required />*@
-                        @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
-                    </div>
-                    <div class="utf-no-border">
-                        @*<input type="text" class="utf-with-border" placeholder="Total year of Experiencen" required />*@
-                        @Html.EditorFor(model => model.TotalYearsOfExperience, new { htmlAttributes = new { @class = "form-control" } })
-                    </div>
+                @Html.BeginForm("SaveBasicDetails", "EmployeeProfile")
+                {
+                <div class="utf-no-border">
+                    @Html.EditorFor(model => model.Id, new { htmlAttributes = new { @placeholder = "Name", @class = "form-control", @style="display:none;" } })
+                    @*<input type="text" class="utf-with-border" placeholder="Name" required />*@
+                    @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @placeholder = "Name", @class = "form-control" } })
+
+                    @*<input type="text" class="utf-with-border" placeholder="Total year of Experiencen" required />*@
+                    @Html.EditorFor(model => model.TotalYearsOfExperience, new { htmlAttributes = new { @class = "form-control", @placeholder = "Total Years of Experience" } })
+                </div>
                     <div class="utf-no-border">
 
                         <div class="utf-no-border margin-bottom-20">
-                            <p class="margin-bottom-0">Annual Salary *</p>
+                            <p class="">Annual Salary *</p>
                             <div class="row">
                                 <div class="col-lg-6  utf-intro-search-field-item">
-                                    @Html.ListBoxFor(model => model.AnnualSalaryLPA, new List<SelectListItem>
+                                    @Html.DropDownListFor(model => model.AnnualSalaryLPA, new List<SelectListItem>
                                          {
                                             new SelectListItem{ Text="1 LPA", Value = "1" },
                                             new SelectListItem{ Text="2 LPA", Value = "2" },
@@ -409,7 +410,7 @@
                                 </select>*@
                                 </div>
                                 <div class="col-lg-6  utf-intro-search-field-item">
-                                    @Html.ListBoxFor(model => model.AnnualSalaryThousand, new List<SelectListItem>
+                                    @Html.DropDownListFor(model => model.AnnualSalaryThousand, new List<SelectListItem>
     {
        new SelectListItem{ Text="0 Thousand", Value = "0" },
        new SelectListItem{ Text="10 Thousand", Value = "10" },
@@ -441,7 +442,7 @@
                             <div class="form-group-inline">
                                 <p class="margin-bottom-0">current Location</p>
                                 <div class="form-check">
-                                    @Html.EditorFor(model => model.CurrentLocation, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.EditorFor(model => model.CurrentLocation, new { htmlAttributes = new { @class = "form-control",@placeholder="Location" } })
                                     @*<label class="form-check-label" for="radio1">
             <input type="radio" class="form-check-input" id="radio1" name="optradio" value="option1" checked>India
         </label>*@
@@ -454,9 +455,7 @@
 
                             </div>
 
-                            <div class="utf-no-border">
-                                <input type="text" class="utf-with-border" name="emailaddress-register" id="emailaddress-register" placeholder="Pune" required />
-                            </div>
+
                         </div>
 
                     </div>
@@ -464,19 +463,17 @@
 
 
                     <div class="utf-no-border">
-                        <input type="text" class="utf-with-border" name="emailaddress-register" id="emailaddress-register" placeholder="Mobile Number" required />
+                        @Html.EditorFor(model => model.PhoneNumber, new { htmlAttributes = new { @class = "form-control",@placeholder="Mobile Number" } })
                     </div>
 
-                    <div class="utf-no-border">
-                        <input type="text" class="utf-with-border" name="emailaddress-register" id="emailaddress-register" placeholder="Email Address" required />
-                    </div>
+                   
 
                     <div class="text-right">
                         <a data-dismiss="Main-mpf" class="button gray utf-ripple-effect-dark">Cancel</a>
-                        <input type="submit" value="Add" id="Submit" class="button ripple-effect" onclick="location.href='@Url.Action("SaveBasicDetails","EmployeeProfile")'" />
+                        <input type="submit" value="Add" id="Submit" class="button ripple-effect" />
                     </div>
 
-                </form>
+                }
 
             </div>
         </div>
